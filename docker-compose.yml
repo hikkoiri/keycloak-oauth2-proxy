@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  keycloak-oauth2-proxy:
+    build: 
+      context: ./
+      dockerfile: Dockerfile-amd64
+    environment: 
+      CLIENT_ID: ""
+      CLIENT_SECRET: ""
+      KEYCLOAK_HOST: ""
+      REALM: ""
+      KEYCLOAK_GROUP: ""
+      #USE_INSECURE_HTTP
