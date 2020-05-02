@@ -1,10 +1,10 @@
-FROM quay.io/oauth2-proxy/oauth2-proxy:latest-armv6	
-
-ENV USE_INSECURE_HTTP="false"
+FROM quay.io/oauth2-proxy/oauth2-proxy:latest-armv6
 
 COPY entrypoint.sh ./
 USER root
 RUN chmod +x entrypoint.sh
 USER 2000
 
+EXPOSE 4180
+ENV USE_INSECURE_HTTP="false"
 ENTRYPOINT [ "./entrypoint.sh" ]

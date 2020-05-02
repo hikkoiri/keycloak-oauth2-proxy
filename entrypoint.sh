@@ -58,4 +58,7 @@ echo "Preflight check finished. Starting OAuth2 Proxy now:"
   -login-url="${PROTOCOL}://${KEYCLOAK_HOST}/realms/${REALM}/protocol/openid-connect/auth"  \
   -redeem-url="${PROTOCOL}://${KEYCLOAK_HOST}/realms/${REALM}/protocol/openid-connect/token"  \
   -validate-url="${PROTOCOL}://${KEYCLOAK_HOST}/realms/${REALM}/protocol/openid-connect/userinfo" \
-  -keycloak-group=$KEYCLOAK_GROUP
+  -keycloak-group=$KEYCLOAK_GROUP \
+  -cookie-secret=${RANDOM}${RANDOM}${RANDOM} \
+  -email-domain=* \
+  -http-address=0.0.0.0:4180 
